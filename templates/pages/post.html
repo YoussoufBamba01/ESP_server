@@ -1,0 +1,34 @@
+{% extends 'pages/base.html' %}
+
+{% block title %} post {% endblock title %}
+
+{% block content %} 
+
+	<h1>post</h1> 
+	<form method="POST" action="/show/">
+		{% csrf_token %}
+
+		<!--  -->
+		<label for="title">valeur humidité</label>
+		<input type="number" name="data1" id="title">
+		<br>
+		<br>
+		<br> 
+
+		<label for="titl">valeur temperature</label>
+		<input type="number" name="data2" id="titl">
+		<br> 
+
+		<input type="submit" name="submit" value="ok" >
+
+
+	</form>
+
+
+{% endblock content %}
+
+
+
+
+
+
