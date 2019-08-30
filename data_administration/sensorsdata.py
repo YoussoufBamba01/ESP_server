@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import firebase_admin
-import time
 from firebase_admin import credentials, firestore
 
 
@@ -13,12 +12,16 @@ firebase = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 
-def recordata(value1, value2):
+def recordata(val1=11, val2=12):
+	if (val1 != 0) & (val2 != 0):
+
 	
-	  sensor_ref= db.collection(u'mesures').document(u'sensor_id')
-	  sensor_ref.set({u'humidity':value1,
-	  				u'temperature': value2
-	  				})
+	  db.collection(u'mesures').document(u'sensorsdata').collection(u'humidity').document(u'value').set(val1)
+	  db.collection(u'mesures').document(u'sensorsdata').collection(u'temperature').document(u'value').set(val2)
+	  print("enregistrement fait")
+	  					
 	  
+	  				
+		  
 	  
 	  
