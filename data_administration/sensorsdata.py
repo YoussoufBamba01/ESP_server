@@ -12,7 +12,7 @@ firebase = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 
-def recordata(val1=11, val2=12):
+def recordata(val1, val2):
 	if (val1 != 0) & (val2 != 0):
 
 	

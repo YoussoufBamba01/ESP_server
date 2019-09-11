@@ -17,11 +17,11 @@ def show(request):
 	if request.method == 'POST':
 		form = Fields(request.POST)
 		if form.is_valid():
-			value1=form.cleaned_data['data1']
-			value2=form.cleaned_data['data2']
+			hum = form.cleaned_data['data1']
+			temp = form.cleaned_data['data2']
 	
-			sensorsdata.recordata(value1, value2)
-			return render(request, 'pages/show.html', {'value1': value1, 'value2': value2})	
+			sensorsdata.recordata(hum, temp)
+			return render(request, 'pages/print.html', {'value1': hum, 'value2': temp})	
 
 	else:
 		form=Fields()
