@@ -16,8 +16,8 @@ def recordata(val1, val2):
 	if (val1 != 0) & (val2 != 0):
 
 	
-	  db.collection(u'mesures').document(u'sensorsdata').collection(u'humidity').document(u'value').set(val1)
-	  db.collection(u'mesures').document(u'sensorsdata').collection(u'temperature').document(u'value').set(val2)
+	  db.collection(u'mesures').document(u'humidity').set({u'value': val1})
+	  db.collection(u'mesures').document(u'temperature').set({u'value': val2})
 	  print("enregistrement fait")
 	  					
 	  
