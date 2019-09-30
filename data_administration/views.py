@@ -7,12 +7,13 @@ def home(request):
 	return render (request, "pages/home.html")
 
 def post(request):
+	
 	from . import sensorsdata
 		
 	hum = request.GET['data1']
 	tem = request.GET['data2']
 
-	sensorsdata.recordata(a, b)
+	sensorsdata.recordata(hum, tem)
 
-	return render (request, "pages/show.html", {'form':form}, {'a':hum}, {'b':tem})
+	return render (request, "pages/show.html", {'hum':hum}, {'tem':tem})
 	
