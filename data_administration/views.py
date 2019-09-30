@@ -7,22 +7,12 @@ def home(request):
 	return render (request, "pages/home.html")
 
 def post(request):
-	form = Fields(request.POST)
-
-	return render (request, "pages/post.html", {'form':form})
-
-def show(request):
 	from . import sensorsdata
+		
+	hum = request.GET['data1']
+	tem = request.GET['data2']
 
-	if request.method == 'POST':
-		form = Fields(request.POST)
-		if form.is_valid():
-			hum = form.cleaned_data['data1']
-			temp = form.cleaned_data['data2']
+	sensorsdata.recordata(a, b)
+
+	return render (request, "pages/show.html", {'form':form}, {'a':hum}, {'b':tem})
 	
-			sensorsdata.recordata(hum, temp)
-			return render(request, 'pages/print.html', {'value1': hum, 'value2': temp})	
-
-	else:
-		form=Fields()
-		return render(request, 'pages/error.html')
