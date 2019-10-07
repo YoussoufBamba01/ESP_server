@@ -14,6 +14,6 @@ def post(request):
 	tem = request.GET['data2']
 
 	sensorsdata.recordata(hum, tem)
-
+	
 	return render (request, "pages/show.html", {'hum':hum}, {'tem':tem})
 	
