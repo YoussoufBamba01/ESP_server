@@ -12,12 +12,12 @@ firebase = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 
-def recordata(val1, val2):
+def recordata(val1, val2, id1, id2):
 	if (val1 != 0) & (val2 != 0):
 
 	
-	  db.collection(u'Captations').document(u'E8CvTU8D2RVxAAMJQ5ek').set({u'valCap': val1})
-	  db.collection(u'Captations').document(u'NZqAZn6EXOlSxKSjaxzg').set({u'valCap': val2})
+	  db.collection(u'Captations').document(id1).set({u'valCap': val1})
+	  db.collection(u'Captations').document(id2).set({u'valCap': val2})
 	  print("enregistrement fait")
 	  					
 	  

@@ -12,8 +12,10 @@ def post(request):
 		
 	hum = request.GET['data1']
 	tem = request.GET['data2']
+	idCap1 = request.GET['id1']
+	icCap2 = request.GET['id2']
 
-	sensorsdata.recordata(hum, tem)
+	sensorsdata.recordata(hum, tem, idCap1, idCap2)
 	
 	return render (request, "pages/show.html", {'hum':hum}, {'tem':tem})
 	
